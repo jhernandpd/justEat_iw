@@ -1,0 +1,186 @@
+<DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
+  <Entity id="User" name="User" duration="persistent" gr:x="335" gr:y="470" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att15" db:database="db1" db:table="user">
+    <Attribute name="oid" id="userOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="userName" id="userName" type="string" db:column="username"/>
+    <Attribute name="password" id="password" type="password" db:column="password"/>
+    <Attribute name="email" id="email" type="string" db:column="email"/>
+    <Attribute id="User#att15" name="timestamp" type="timestamp" db:column="timestamp"/>
+  </Entity>
+  <Entity id="Group" name="Group" duration="persistent" gr:x="565" gr:y="490" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="group">
+    <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="groupName" id="groupName" type="string" db:column="groupname"/>
+  </Entity>
+  <Entity id="Module" name="Module" duration="persistent" gr:x="790" gr:y="480" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db1" db:table="module">
+    <Attribute name="oid" id="moduleOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="moduleID" id="moduleID" type="string" db:column="moduleid"/>
+    <Attribute name="moduleName" id="moduleName" type="string" db:column="modulename"/>
+  </Entity>
+  <Relationship id="User2Group_Group2User" name="User_Group" sourceEntity="User" targetEntity="Group" db:database="db1" db:table="user_group">
+    <RelationshipRole1 id="User2Group" name="groups" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="Group2User" name="users" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="113,42,-112,44" db:database="db1" db:table="user">
+    <RelationshipRole1 id="User2DefaultGroup" name="defaultGroup" maxCard="1">
+      <db:JoinColumn attribute="userOID" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="DefaultGroup2User" name="defaultUsers" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Group2DefaultModule_DefaultModule2Group" name="Group_DefaultModule" sourceEntity="Group" targetEntity="Module" db:database="db1" db:table="group">
+    <RelationshipRole1 id="Group2DefaultModule" name="defaultModule" maxCard="1">
+      <db:JoinColumn attribute="groupOID" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="DefaultModule2Group" name="defaultGroups" maxCard="N">
+      <db:JoinColumn attribute="moduleOID" name="module_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Group2Module_Module2Group" name="Group_Module" sourceEntity="Group" targetEntity="Module" gr:bendpoints="110,41,-115,41" db:database="db1" db:table="group_module">
+    <RelationshipRole1 id="Group2Module" name="modules" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="Module2Group" name="groups" maxCard="N">
+      <db:JoinColumn attribute="moduleOID" name="module_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="315" gr:y="100" id="ent1" name="Restaurante" duration="persistent" attributeOrder="ent1#att1 ent1#att2 ent1#att3 ent1#att4 ent1#att5 ent1#att7 ent1#att8 ent1#att9 ent1#att10 ent1#att30 ent1#att16" db:database="db1" db:table="restaurante">
+    <Attribute id="ent1#att1" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent1#att2" name="nombre_restaurante" type="string" db:column="nombre_restaurante"/>
+    <Attribute id="ent1#att3" name="direccion" type="string" db:column="direccion"/>
+    <Attribute id="ent1#att4" name="telefono" type="string" db:column="telefono"/>
+    <Attribute id="ent1#att5" name="ped_minimo" type="float" db:column="ped_minimo"/>
+    <Attribute id="ent1#att7" name="poblacion" type="string" db:column="poblacion"/>
+    <Attribute id="ent1#att8" name="cp" type="integer" db:column="cp"/>
+    <Attribute id="ent1#att9" name="hora_apertura" type="time" db:column="hora_apertura"/>
+    <Attribute id="ent1#att10" name="hora_cierra" type="time" db:column="hora_cierra"/>
+    <Attribute id="ent1#att30" name="valoracion" type="float" db:column="valoracion"/>
+    <Attribute id="ent1#att16" name="habilitado" type="boolean" db:column="habilitado"/>
+  </Entity>
+  <Entity gr:x="635" gr:y="5" id="ent2" name="Producto" duration="persistent" attributeOrder="ent2#att11 ent2#att12 ent2#att13 ent2#att14 ent2#att27" db:database="db1" db:table="producto">
+    <Attribute id="ent2#att11" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent2#att12" name="nombre_producto" type="string" db:column="nombre_producto"/>
+    <Attribute id="ent2#att13" name="descripcion" type="string" db:column="descripcion"/>
+    <Attribute id="ent2#att14" name="precio" type="float" db:column="precio"/>
+    <Attribute id="ent2#att27" name="stock" type="integer" db:column="stock"/>
+  </Entity>
+  <Entity id="ent4" name="Menu" duration="persistent" attributeOrder="ent4#att19 ent4#att20 ent4#att21 ent4#att22 ent4#att29" gr:x="890" gr:y="105" db:database="db1" db:table="menu">
+    <Attribute id="ent4#att19" name="oid" key="true" type="integer" db:column="oid"/>
+    <Attribute id="ent4#att20" name="nombre_menu" type="string" db:column="nombre_menu"/>
+    <Attribute id="ent4#att21" name="descripcion" type="string" db:column="descripcion"/>
+    <Attribute id="ent4#att22" name="precio" type="float" db:column="precio"/>
+    <Attribute id="ent4#att29" name="Descuento" type="integer" db:column="descuento"/>
+  </Entity>
+  <Entity gr:x="725" gr:y="300" id="ent5" name="Pedido" duration="persistent" attributeOrder="ent5#att23 ent5#att24 ent5#att25 ent5#att26" db:database="db1" db:table="pedido">
+    <Attribute id="ent5#att23" key="true" name="oid_pedido" type="integer" db:column="oid_pedido"/>
+    <Attribute id="ent5#att24" name="precioTotal" type="float" db:column="preciototal"/>
+    <Attribute id="ent5#att25" name="direccion" type="string" db:column="direccion"/>
+    <Attribute id="ent5#att26" name="descuento" type="float" db:column="descuento"/>
+  </Entity>
+  <Entity gr:x="85" gr:y="185" id="ent6" name="Opinion" duration="persistent" attributeOrder="ent6#att31 ent6#att32 ent6#att33 ent6#att34" db:database="db1" db:table="opinion">
+    <Attribute id="ent6#att31" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent6#att32" name="comentario" type="string" db:column="comentario"/>
+    <Attribute id="ent6#att33" name="fecha" type="timestamp" db:column="fecha"/>
+    <Attribute id="ent6#att34" name="valoracion" type="integer" db:column="valoracion"/>
+  </Entity>
+  <Relationship id="rel1" name="User_Restaurante" sourceEntity="User" targetEntity="ent1" db:database="db1" db:table="restaurante">
+    <RelationshipRole1 id="rel1#role1" name="UserToRestaurante" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel1#role2" name="RestauranteToUser" maxCard="1">
+      <db:JoinColumn attribute="ent1#att1" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel2" name="Restaurante_Opinion" sourceEntity="ent1" targetEntity="ent6" db:database="db1" db:table="opinion">
+    <RelationshipRole1 id="rel2#role3" name="RestauranteToOpinion" maxCard="N">
+      <db:JoinColumn attribute="ent1#att1" name="restaurante_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel2#role4" name="OpinionToRestaurante" maxCard="1">
+      <db:JoinColumn attribute="ent6#att31" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel3" name="Opinion_User" sourceEntity="ent6" targetEntity="User" gr:bendpoints="2,270,-253,-15" db:database="db1" db:table="opinion">
+    <RelationshipRole1 id="rel3#role5" name="OpinionToUser" maxCard="1">
+      <db:JoinColumn attribute="ent6#att31" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel3#role6" name="UserToOpinion" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel4" name="Restaurante_Producto" sourceEntity="ent1" targetEntity="ent2" db:database="db1" db:table="producto">
+    <RelationshipRole1 id="rel4#role7" name="RestauranteToProducto" maxCard="N">
+      <db:JoinColumn attribute="ent1#att1" name="restaurante_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel4#role8" name="ProductoToRestaurante" maxCard="1">
+      <db:JoinColumn attribute="ent2#att11" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel5" name="Producto_Menu" sourceEntity="ent2" targetEntity="ent4" db:database="db1" db:table="producto_menu">
+    <RelationshipRole1 id="rel5#role9" name="ProductoToMenu" maxCard="N">
+      <db:JoinColumn attribute="ent2#att11" name="producto_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel5#role10" name="MenuToProducto" maxCard="N">
+      <db:JoinColumn attribute="ent4#att19" name="menu_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel6" name="Producto_Pedido" sourceEntity="ent2" targetEntity="ent5" db:database="db1" db:table="producto_pedido">
+    <RelationshipRole1 id="rel6#role11" name="ProductoToPedido" maxCard="N">
+      <db:JoinColumn attribute="ent2#att11" name="producto_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel6#role12" name="PedidoToProducto" maxCard="N">
+      <db:JoinColumn attribute="ent5#att23" name="pedido_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel7" name="Menu_Pedido" sourceEntity="ent4" targetEntity="ent5" db:database="db1" db:table="menu_pedido">
+    <RelationshipRole1 id="rel7#role13" name="MenuToPedido" maxCard="N">
+      <db:JoinColumn attribute="ent4#att19" name="menu_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel7#role14" name="PedidoToMenu" maxCard="N">
+      <db:JoinColumn attribute="ent5#att23" name="pedido_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel8" name="User_Pedido" sourceEntity="User" targetEntity="ent5" db:database="db1" db:table="pedido">
+    <RelationshipRole1 id="rel8#role15" name="UserToPedido" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel8#role16" name="PedidoToUser" maxCard="1">
+      <db:JoinColumn attribute="ent5#att23" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="110" gr:y="30" id="ent3" name="Tipo_Comida" duration="persistent" attributeOrder="ent3#att17 ent3#att18" db:database="db1" db:table="tipo_comida">
+    <Attribute id="ent3#att17" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent3#att18" name="nombre" type="string" db:column="nombre"/>
+  </Entity>
+  <Relationship id="rel9" name="Tipo_Comida_Restaurante" sourceEntity="ent3" targetEntity="ent1" db:database="db1" db:table="restaurante">
+    <RelationshipRole1 id="rel9#role17" name="Tipo_ComidaToRestaurante" maxCard="N">
+      <db:JoinColumn attribute="ent3#att17" name="tipo_comida_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel9#role18" name="RestauranteToTipo_Comida" maxCard="1">
+      <db:JoinColumn attribute="ent1#att1" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <db:Database id="db1" name="BD_justEat" type="PostgreSQL 9" url="jdbc:postgresql://localhost:5432/justEat_iw" username="postgres" password="admin" schema="public"/>
+  <Entity gr:x="395" gr:y="-20" id="ent7" name="Tipo_Producto" duration="persistent" attributeOrder="ent7#att6 ent7#att28" db:database="db1" db:table="tipo_producto">
+    <Attribute id="ent7#att6" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent7#att28" name="tipo" type="string" db:column="tipo"/>
+  </Entity>
+  <Relationship id="rel10" name="Producto_Tipo_Producto" sourceEntity="ent2" targetEntity="ent7" db:database="db1" db:table="producto">
+    <RelationshipRole1 id="rel10#role19" name="ProductoToTipo_Producto" maxCard="1">
+      <db:JoinColumn attribute="ent2#att11" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel10#role20" name="Tipo_ProductoToProducto" maxCard="N">
+      <db:JoinColumn attribute="ent7#att6" name="tipo_producto_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel11" name="Restaurante_Menu" sourceEntity="ent1" targetEntity="ent4" db:database="db1" db:table="menu">
+    <RelationshipRole1 id="rel11#role21" name="RestauranteToMenu" maxCard="N">
+      <db:JoinColumn attribute="ent1#att1" name="restaurante_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel11#role22" name="MenuToRestaurante" maxCard="1">
+      <db:JoinColumn attribute="ent4#att19" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+</DataModel>

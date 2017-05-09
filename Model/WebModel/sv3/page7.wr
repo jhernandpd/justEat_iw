@@ -1,0 +1,133 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-10" gr:y="95" id="sv3#page7" name="Restaurantes" landmark="true">
+  <ContentUnits>
+    <IndexUnit gr:x="150" gr:y="0" id="sv3#page7#inu2" name="Restaurantes" entity="ent1" displayAttributes="ent1#att2" linkOrder="sv3#page7#inu2#ln8">
+      <SortAttribute attribute="ent1#att2" order="ascending"/>
+      <Selector id="sv3#page7#inu2#su2" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page7#inu2#su2#rcond1" name="Usuario" predicate="in" implied="false" role="rel1#role1"/>
+      </Selector>
+      <Link id="sv3#page7#inu2#ln8" name="Consultar" to="sv3#seu1" type="normal" validate="true">
+        <LinkParameter id="sv3#page7#inu2#ln8#par81" name="oid_restaurante_ID [oid_restaurante]" source="data[].ent1#att1" target="sv3#seu1#su4#kcond1.ent1#att1"/>
+      </Link>
+    </IndexUnit>
+    <GetUnit gr:x="150" gr:y="115" id="sv3#page7#gtu2" name="User" contextParameters="UserCtxParam">
+      <Link id="sv3#page7#gtu2#ln7" name="Flow7" to="sv3#page7#inu2" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv3#page7#gtu2#ln11" name="Flow11" to="sv3#cru2" type="transport" validate="true" gr:bendpoints="-88,126,-103,-154">
+        <LinkParameter id="sv3#page7#gtu2#ln11#par96" name="UserCtxParam.oid_User.oid(RestauranteToUser)" source="sv3#page7#gtu2.UserCtxParam" target="sv3#cru2.rel1#role2.userOID"/>
+      </Link>
+    </GetUnit>
+    <EntryUnit gr:x="150" gr:y="210" id="sv3#page7#enu4" name="Restaurante" entity="ent1" linkOrder="sv3#page7#enu4#ln9 sv3#page7#enu4#ln12 sv3#page7#enu4#ln32">
+      <Field id="sv3#page7#enu4#fld4" name="nombre" type="string" modifiable="true" attribute="ent1#att2" preloaded="true"/>
+      <Field id="sv3#page7#enu4#fld5" name="direccion" type="string" modifiable="true" attribute="ent1#att3" preloaded="true"/>
+      <Field id="sv3#page7#enu4#fld9" name="telefono" type="string" modifiable="true" attribute="ent1#att4" preloaded="true"/>
+      <Field id="sv3#page7#enu4#fld10" name="ped_minimo" type="float" modifiable="true" attribute="ent1#att5" preloaded="true"/>
+      <Field id="sv3#page7#enu4#fld11" name="poblacion" type="string" modifiable="true" attribute="ent1#att7" preloaded="true"/>
+      <Field id="sv3#page7#enu4#fld12" name="cp" type="integer" modifiable="true" attribute="ent1#att8" preloaded="true"/>
+      <Field id="sv3#page7#enu4#fld13" name="hora_apertura" type="time" modifiable="true" attribute="ent1#att9" preloaded="true"/>
+      <Field id="sv3#page7#enu4#fld14" name="hora_cierra" type="time" modifiable="true" attribute="ent1#att10" preloaded="true"/>
+      <Field id="sv3#page7#enu4#fld15" name="oid" type="integer" modifiable="false" attribute="ent1#att1" hidden="true" preloaded="true"/>
+      <Link id="sv3#page7#enu4#ln9" name="Aceptar" to="sv3#inn2" type="normal" validate="true">
+        <LinkParameter id="sv3#page7#enu4#ln9#par24" name="oid_Input" source="sv3#page7#enu4#fld15" target="sv3#inn2.isnotnull"/>
+      </Link>
+      <Link id="sv3#page7#enu4#ln10" name="Flow10" to="sv3#cru2" type="transport" validate="true">
+        <LinkParameter id="sv3#page7#enu4#ln10#par25" name="cp_cp" source="sv3#page7#enu4#fld12" target="sv3#cru2.ent1#att8"/>
+        <LinkParameter id="sv3#page7#enu4#ln10#par26" name="direccion_direccion" source="sv3#page7#enu4#fld5" target="sv3#cru2.ent1#att3"/>
+        <LinkParameter id="sv3#page7#enu4#ln10#par27" name="hora_apertura_hora_apertura" source="sv3#page7#enu4#fld13" target="sv3#cru2.ent1#att9"/>
+        <LinkParameter id="sv3#page7#enu4#ln10#par28" name="hora_cierra_hora_cierra" source="sv3#page7#enu4#fld14" target="sv3#cru2.ent1#att10"/>
+        <LinkParameter id="sv3#page7#enu4#ln10#par29" name="nombre_nombre" source="sv3#page7#enu4#fld4" target="sv3#cru2.ent1#att2"/>
+        <LinkParameter id="sv3#page7#enu4#ln10#par31" name="ped_minimo_ped_minimo" source="sv3#page7#enu4#fld10" target="sv3#cru2.ent1#att5"/>
+        <LinkParameter id="sv3#page7#enu4#ln10#par32" name="poblacion_poblacion" source="sv3#page7#enu4#fld11" target="sv3#cru2.ent1#att7"/>
+        <LinkParameter id="sv3#page7#enu4#ln10#par34" name="telefono_telefono" source="sv3#page7#enu4#fld9" target="sv3#cru2.ent1#att4"/>
+        <LinkParameter id="sv3#page7#enu4#ln10#par37" name="Tipo_Comida_Tipo_Comida.oid(RestauranteToTipo_Comida)" source="sv3#page7#enu4#sfld2" target="sv3#cru2.rel9#role18.ent3#att17"/>
+      </Link>
+      <SelectionField id="sv3#page7#enu4#sfld2" name="Tipo_Comida" type="string" role="rel9#role18"/>
+      <Field id="sv3#page7#enu4#fld16" name="habilitado" type="boolean" modifiable="false" attribute="ent1#att16" preloaded="true"/>
+      <Link id="sv3#page7#enu4#ln12" name="Limpiar Formulario" to="sv3#page7" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-51,55,19,170"/>
+      <Link id="sv3#page7#enu4#ln14" name="Flow14" to="sv3#mfu1" type="transport" validate="true">
+        <LinkParameter id="sv3#page7#enu4#ln14#par36" name="cp_cp" source="sv3#page7#enu4#fld12" target="sv3#mfu1.ent1#att8"/>
+        <LinkParameter id="sv3#page7#enu4#ln14#par40" name="direccion_direccion" source="sv3#page7#enu4#fld5" target="sv3#mfu1.ent1#att3"/>
+        <LinkParameter id="sv3#page7#enu4#ln14#par41" name="habilitado_habilitado" source="sv3#page7#enu4#fld16" target="sv3#mfu1.ent1#att16"/>
+        <LinkParameter id="sv3#page7#enu4#ln14#par42" name="hora_apertura_hora_apertura" source="sv3#page7#enu4#fld13" target="sv3#mfu1.ent1#att9"/>
+        <LinkParameter id="sv3#page7#enu4#ln14#par43" name="hora_cierra_hora_cierra" source="sv3#page7#enu4#fld14" target="sv3#mfu1.ent1#att10"/>
+        <LinkParameter id="sv3#page7#enu4#ln14#par44" name="nombre_nombre" source="sv3#page7#enu4#fld4" target="sv3#mfu1.ent1#att2"/>
+        <LinkParameter id="sv3#page7#enu4#ln14#par45" name="ped_minimo_ped_minimo" source="sv3#page7#enu4#fld10" target="sv3#mfu1.ent1#att5"/>
+        <LinkParameter id="sv3#page7#enu4#ln14#par46" name="poblacion_poblacion" source="sv3#page7#enu4#fld11" target="sv3#mfu1.ent1#att7"/>
+        <LinkParameter id="sv3#page7#enu4#ln14#par47" name="telefono_telefono" source="sv3#page7#enu4#fld9" target="sv3#mfu1.ent1#att4"/>
+        <LinkParameter id="sv3#page7#enu4#ln14#par48" name="Tipo_Comida_Tipo_Comida.oid(RestauranteToTipo_Comida)" source="sv3#page7#enu4#sfld2" target="sv3#mfu1.rel9#role18.ent3#att17"/>
+      </Link>
+      <Link id="sv3#page7#enu4#ln32" name="Borrar" to="sv3#dlu2" type="normal" validate="true">
+        <LinkParameter id="sv3#page7#enu4#ln32#par105" name="oid_KeyCondition7 [oid]" source="sv3#page7#enu4#fld15" target="sv3#dlu2#su18#kcond7.ent1#att1"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="0" gr:y="165" id="sv3#page7#seu4" name="Tipo Comida" entity="ent3">
+      <Link id="sv3#page7#seu4#ln13" name="Flow13" to="sv3#page7#enu4" type="transport" validate="true">
+        <LinkParameter id="sv3#page7#seu4#ln13#par38" name="nombre_Tipo_Comida [label]" source="ent3#att18Array" target="sv3#page7#enu4#sfld2_label"/>
+        <LinkParameter id="sv3#page7#seu4#ln13#par39" name="oid_Tipo_Comida [output]" source="ent3#att17Array" target="sv3#page7#enu4#sfld2_output"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page7#inu2">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Link link="sv3#page7#inu2#ln8"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page7#enu4">
+          <layout:Field field="sv3#page7#enu4#fld4"/>
+          <layout:Field field="sv3#page7#enu4#fld5"/>
+          <layout:Field field="sv3#page7#enu4#fld9"/>
+          <layout:Field field="sv3#page7#enu4#fld10"/>
+          <layout:Field field="sv3#page7#enu4#fld11"/>
+          <layout:Field field="sv3#page7#enu4#fld12"/>
+          <layout:Field field="sv3#page7#enu4#fld13"/>
+          <layout:Field field="sv3#page7#enu4#fld14"/>
+          <layout:Field field="sv3#page7#enu4#sfld2"/>
+          <layout:Field field="sv3#page7#enu4#fld16"/>
+          <layout:Link link="sv3#page7#enu4#ln9"/>
+          <layout:Link link="sv3#page7#enu4#ln12"/>
+          <layout:Link link="sv3#page7#enu4#ln32"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

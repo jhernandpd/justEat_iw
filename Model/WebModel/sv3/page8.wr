@@ -1,0 +1,78 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="515" gr:y="85" id="sv3#page8" name="A&#241;adir Productos" landmark="true">
+  <ContentUnits>
+    <EntryUnit gr:x="110" gr:y="0" id="sv3#page8#enu5" name="Producto" entity="ent2" linkOrder="sv3#page8#enu5#ln18">
+      <Field id="sv3#page8#enu5#fld17" name="nombre" type="string" modifiable="true" attribute="ent2#att12"/>
+      <Field id="sv3#page8#enu5#fld18" name="descripcion" type="string" modifiable="true" attribute="ent2#att13"/>
+      <Field id="sv3#page8#enu5#fld19" name="precio" type="float" modifiable="true" attribute="ent2#att14"/>
+      <Field id="sv3#page8#enu5#fld20" name="stock" type="integer" modifiable="true" attribute="ent2#att27"/>
+      <SelectionField id="sv3#page8#enu5#sfld1" name="Restaurante" type="string" role="rel4#role8"/>
+      <SelectionField id="sv3#page8#enu5#sfld4" name="Tipo Producto" type="string" role="rel10#role19"/>
+      <Link id="sv3#page8#enu5#ln18" name="Crear" to="sv3#cru3" type="normal" validate="true" gr:bendpoints="130,136,100,-154">
+        <LinkParameter id="sv3#page8#enu5#ln18#par54" name="descripcion_descripcion" source="sv3#page8#enu5#fld18" target="sv3#cru3.ent2#att13"/>
+        <LinkParameter id="sv3#page8#enu5#ln18#par55" name="nombre_nombre" source="sv3#page8#enu5#fld17" target="sv3#cru3.ent2#att12"/>
+        <LinkParameter id="sv3#page8#enu5#ln18#par56" name="precio_precio" source="sv3#page8#enu5#fld19" target="sv3#cru3.ent2#att14"/>
+        <LinkParameter id="sv3#page8#enu5#ln18#par57" name="Restaurante_Restaurante.oid(ProductoToRestaurante)" source="sv3#page8#enu5#sfld1" target="sv3#cru3.rel4#role8.ent1#att1"/>
+        <LinkParameter id="sv3#page8#enu5#ln18#par58" name="stock_stock" source="sv3#page8#enu5#fld20" target="sv3#cru3.ent2#att27"/>
+        <LinkParameter id="sv3#page8#enu5#ln18#par59" name="Tipo Producto_Tipo_Producto.oid(ProductoToTipo_Producto)" source="sv3#page8#enu5#sfld4" target="sv3#cru3.rel10#role19.ent7#att6"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="230" gr:y="10" id="sv3#page8#seu2" name="TIpo_Producto" entity="ent7">
+      <Link id="sv3#page8#seu2#ln16" name="Flow16" to="sv3#page8#enu5" type="transport" validate="true">
+        <LinkParameter id="sv3#page8#seu2#ln16#par51" name="tipo_ProductoToTipo_Producto [label]" source="ent7#att28Array" target="sv3#page8#enu5#sfld4_label"/>
+        <LinkParameter id="sv3#page8#seu2#ln16#par52" name="oid_ProductoToTipo_Producto [output]" source="ent7#att6Array" target="sv3#page8#enu5#sfld4_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="125" gr:y="140" id="sv3#page8#seu5" name="Restaurante" entity="ent1">
+      <Link id="sv3#page8#seu5#ln15" name="Flow15" to="sv3#page8#enu5" type="transport" validate="true">
+        <LinkParameter id="sv3#page8#seu5#ln15#par49" name="nombre_ProductoToRestaurante [label]" source="ent1#att2Array" target="sv3#page8#enu5#sfld1_label"/>
+        <LinkParameter id="sv3#page8#seu5#ln15#par50" name="oid_ProductoToRestaurante [output]" source="ent1#att1Array" target="sv3#page8#enu5#sfld1_output"/>
+      </Link>
+      <Selector id="sv3#page8#seu5#su6" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page8#seu5#su6#rcond3" name="Usuario" predicate="in" implied="false" role="rel1#role1"/>
+      </Selector>
+    </SelectorUnit>
+    <GetUnit gr:x="0" gr:y="75" id="sv3#page8#gtu1" name="User" contextParameters="UserCtxParam">
+      <Link id="sv3#page8#gtu1#ln19" name="Flow19" to="sv3#page8#seu5" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page8#enu5">
+          <layout:Field field="sv3#page8#enu5#fld17"/>
+          <layout:Field field="sv3#page8#enu5#fld18"/>
+          <layout:Field field="sv3#page8#enu5#fld19"/>
+          <layout:Field field="sv3#page8#enu5#fld20"/>
+          <layout:Field field="sv3#page8#enu5#sfld1"/>
+          <layout:Field field="sv3#page8#enu5#sfld4"/>
+          <layout:Link link="sv3#page8#enu5#ln18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

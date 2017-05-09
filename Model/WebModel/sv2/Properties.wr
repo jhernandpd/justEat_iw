@@ -1,0 +1,11 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Publico" homePage="sv2#page3" landmarks="sv2#page2 sv2#page4">
+  <OperationUnits>
+    <LoginUnit gr:x="660" gr:y="130" id="sv2#lgu1" name="LoginUnit"/>
+    <CreateUnit id="sv2#cru1" name="Crear Usuario" gr:x="750" gr:y="373" entity="User"/>
+    <TimeUnit id="sv2#tmu1" name="Time" gr:x="735" gr:y="240">
+      <OKLink id="sv2#tmu1#oln1" name="OKFlow24" to="sv2#cru1">
+        <LinkParameter id="sv2#tmu1#oln1#par6" name="Current/Input Timestamp_timestamp" source="currentTimestamp" target="sv2#cru1.User#att15"/>
+      </OKLink>
+    </TimeUnit>
+  </OperationUnits>
+</SiteView>

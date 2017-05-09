@@ -1,0 +1,92 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="320" gr:y="265" id="sv2#page4" name="Registro" landmark="true">
+  <ContentUnits>
+    <EntryUnit gr:x="130" gr:y="0" id="sv2#page4#enu2" name="Registrarse" linkOrder="sv2#page4#enu2#ln3" entity="User">
+      <Link id="sv2#page4#enu2#ln3" name="Registrarse" to="sv2#tmu1" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#page4#enu2#ln4" name="Flow4" to="sv2#cru1" type="transport" validate="true">
+        <LinkParameter id="sv2#page4#enu2#ln4#par7" name="email_email" source="sv2#page4#enu2#fld8" target="sv2#cru1.email"/>
+        <LinkParameter id="sv2#page4#enu2#ln4#par8" name="password_password" source="sv2#page4#enu2#fld7" target="sv2#cru1.password"/>
+        <LinkParameter id="sv2#page4#enu2#ln4#par9" name="userName_userName" source="sv2#page4#enu2#fld6" target="sv2#cru1.userName"/>
+        <LinkParameter id="sv2#page4#enu2#ln4#par12" name="defaultGroup_Group.oid(defaultGroup)" source="sv2#page4#enu2#sfld3" target="sv2#cru1.User2DefaultGroup.groupOID"/>
+      </Link>
+      <Field id="sv2#page4#enu2#fld6" name="userName" type="string" modifiable="true" attribute="userName"/>
+      <Field id="sv2#page4#enu2#fld7" name="password" type="password" modifiable="true" attribute="password"/>
+      <Field id="sv2#page4#enu2#fld8" name="email" type="string" modifiable="true" attribute="email"/>
+      <SelectionField id="sv2#page4#enu2#sfld3" name="defaultGroup" type="string" role="User2DefaultGroup"/>
+    </EntryUnit>
+    <SelectorUnit gr:x="0" gr:y="0" id="sv2#page4#seu3" name="Grupos" entity="Group">
+      <Selector id="sv2#page4#seu3#su3" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv2#page4#seu3#su3#acond3" name="Id" predicate="gt" booleanOperator="or" implied="false" attributes="groupOID" value="1"/>
+      </Selector>
+      <Link id="sv2#page4#seu3#ln6" name="Flow6" to="sv2#page4#enu2" type="transport" validate="true">
+        <LinkParameter id="sv2#page4#seu3#ln6#par15" name="groupName_defaultGroup [label]" source="groupNameArray" target="sv2#page4#enu2#sfld3_label"/>
+        <LinkParameter id="sv2#page4#seu3#ln6#par16" name="oid_defaultGroup [output]" source="groupOIDArray" target="sv2#page4#enu2#sfld3_output"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page4#enu2">
+          <layout:Link link="sv2#page4#enu2#ln3"/>
+          <layout:Field field="sv2#page4#enu2#fld6"/>
+          <layout:Field field="sv2#page4#enu2#fld7"/>
+          <layout:Field field="sv2#page4#enu2#fld8"/>
+          <layout:Field field="sv2#page4#enu2#sfld3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

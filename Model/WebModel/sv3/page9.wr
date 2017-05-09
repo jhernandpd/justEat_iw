@@ -1,0 +1,91 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="740" gr:y="595" id="sv3#page9" name="A&#241;adir Men&#250;s" landmark="true">
+  <ContentUnits>
+    <GetUnit gr:x="0" gr:y="0" id="sv3#page9#gtu4" name="User" contextParameters="UserCtxParam">
+      <Link id="sv3#page9#gtu4#ln33" name="Flow33" to="sv3#page9#inu5" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+    <EntryUnit gr:x="150" gr:y="135" id="sv3#page9#enu8" name="Men&#250;" entity="ent4" linkOrder="sv3#page9#enu8#ln36">
+      <Field id="sv3#page9#enu8#fld29" name="nombre" type="string" modifiable="true" attribute="ent4#att20" preloaded="false"/>
+      <Field id="sv3#page9#enu8#fld30" name="descripcion" type="string" modifiable="true" attribute="ent4#att21" preloaded="false"/>
+      <Field id="sv3#page9#enu8#fld31" name="precio" type="float" modifiable="false" attribute="ent4#att22" preloaded="false" hidden="true"/>
+      <MultiSelectionField id="sv3#page9#enu8#msfld2" name="Productos" type="string" role="rel5#role10"/>
+      <Link id="sv3#page9#enu8#ln36" name="Crear" to="sv3#cru4" type="normal" validate="true">
+        <LinkParameter id="sv3#page9#enu8#ln36#par99" name="descripcion_descripcion" source="sv3#page9#enu8#fld30" target="sv3#cru4.ent4#att21"/>
+        <LinkParameter id="sv3#page9#enu8#ln36#par100" name="nombre_nombre" source="sv3#page9#enu8#fld29" target="sv3#cru4.ent4#att20"/>
+        <LinkParameter id="sv3#page9#enu8#ln36#par101" name="precio_precio" source="sv3#page9#enu8#fld31" target="sv3#cru4.ent4#att22"/>
+        <LinkParameter id="sv3#page9#enu8#ln36#par102" name="Productos_Producto.oid(MenuToProducto)" source="sv3#page9#enu8#msfld2" target="sv3#cru4.rel5#role10.ent2#att11"/>
+        <LinkParameter id="sv3#page9#enu8#ln36#par94" name="Descuento_Descuento" source="sv3#page9#enu8#fld26" target="sv3#cru4.ent4#att29"/>
+        <LinkParameter id="sv3#page9#enu8#ln36#par145" name="oid_PASSING_Restaurante.oid(MenuToRestaurante)" sourceLinkParameter="sv3#seu15#oln9#par144" target="sv3#cru4.rel11#role22.ent1#att1"/>
+      </Link>
+      <Field id="sv3#page9#enu8#fld26" name="Descuento" type="integer" modifiable="true" attribute="ent4#att29" preloaded="false"/>
+      <Field id="sv3#page9#enu8#fld27" name="Restaurante" type="string" modifiable="false" preloaded="true"/>
+    </EntryUnit>
+    <IndexUnit gr:x="125" gr:y="0" id="sv3#page9#inu5" name="Restaurantes" entity="ent1" linkOrder="sv3#page9#inu5#ln20" displayAttributes="ent1#att2">
+      <Selector id="sv3#page9#inu5#su8" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page9#inu5#su8#rcond5" name="Usuario" predicate="in" implied="false" role="rel1#role1"/>
+      </Selector>
+      <Link id="sv3#page9#inu5#ln20" name="Seleccionar" to="sv3#seu15" type="normal" validate="true">
+        <LinkParameter id="sv3#page9#inu5#ln20#par83" name="oid_Restaurante [oid]" source="data[].ent1#att1" target="sv3#seu15#su16#rcond11.ent1#att1"/>
+        <LinkParameter id="sv3#page9#inu5#ln20#par141" name="nombre_PASSING" source="data[].ent1#att2" passing="true"/>
+        <LinkParameter id="sv3#page9#inu5#ln20#par142" name="oid_PASSING" source="data[].ent1#att1" passing="true"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page9#inu5">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Link link="sv3#page9#inu5#ln20"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page9#enu8">
+          <layout:Link link="sv3#page9#enu8#ln36"/>
+          <layout:Field field="sv3#page9#enu8#fld29"/>
+          <layout:Field field="sv3#page9#enu8#fld30"/>
+          <layout:Field field="sv3#page9#enu8#msfld2"/>
+          <layout:Field field="sv3#page9#enu8#fld26"/>
+          <layout:Field field="sv3#page9#enu8#fld27"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

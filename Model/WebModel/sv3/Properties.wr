@@ -1,0 +1,130 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Restaurante" protected="true" landmarks="sv3#page7 sv3#page8 sv3#page9 sv3#page10 sv3#page11 sv3#lou2" homePage="sv3#page7">
+  <OperationUnits>
+    <SelectorUnit gr:x="325" gr:y="135" id="sv3#seu1" name="Restaurante" entity="ent1">
+      <Selector id="sv3#seu1#su4" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#seu1#su4#kcond1" name="ID" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#seu1#oln2" name="OKFlow2" to="sv3#page7#enu4">
+        <LinkParameter id="sv3#seu1#oln2#par13" name="cp_cp" source="ent1#att8Array" target="sv3#page7#enu4#fld12_slot"/>
+        <LinkParameter id="sv3#seu1#oln2#par14" name="direccion_direccion" source="ent1#att3Array" target="sv3#page7#enu4#fld5_slot"/>
+        <LinkParameter id="sv3#seu1#oln2#par17" name="hora_apertura_hora_apertura" source="ent1#att9Array" target="sv3#page7#enu4#fld13_slot"/>
+        <LinkParameter id="sv3#seu1#oln2#par18" name="hora_cierra_hora_cierra" source="ent1#att10Array" target="sv3#page7#enu4#fld14_slot"/>
+        <LinkParameter id="sv3#seu1#oln2#par19" name="oid_Key Condition [oid]" source="ent1#att1Array" target="sv3#page7#enu4.ent1#att1"/>
+        <LinkParameter id="sv3#seu1#oln2#par20" name="nombre_nombre" source="ent1#att2Array" target="sv3#page7#enu4#fld4_slot"/>
+        <LinkParameter id="sv3#seu1#oln2#par21" name="ped_minimo_ped_minimo" source="ent1#att5Array" target="sv3#page7#enu4#fld10_slot"/>
+        <LinkParameter id="sv3#seu1#oln2#par22" name="poblacion_poblacion" source="ent1#att7Array" target="sv3#page7#enu4#fld11_slot"/>
+        <LinkParameter id="sv3#seu1#oln2#par23" name="telefono_telefono" source="ent1#att4Array" target="sv3#page7#enu4#fld9_slot"/>
+        <LinkParameter id="sv3#seu1#oln2#par5" name="habilitado_habilitado" source="ent1#att16Array" target="sv3#page7#enu4#fld16_slot"/>
+      </OKLink>
+    </SelectorUnit>
+    <CreateUnit gr:x="145" gr:y="520" id="sv3#cru2" name="Crear Restaurante" entity="ent1">
+      <OKLink id="sv3#cru2#oln4" name="OKFlow4" to="sv3#page7" automaticCoupling="true" gr:bendpoints="30,-72,110,213"/>
+    </CreateUnit>
+    <ModifyUnit gr:x="385" gr:y="520" id="sv3#mfu1" name="Actualizar Restaurante" entity="ent1" landmark="false">
+      <Selector id="sv3#mfu1#su5" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#mfu1#su5#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#mfu1#oln5" name="OKFlow5" to="sv3#seu1" automaticCoupling="true" gr:bendpoints="93,-104,183,281"/>
+    </ModifyUnit>
+    <IsNotNullUnit id="sv3#inn2" name="Es Actualizar?" gr:x="390" gr:y="390" emptyStringAsNull="true">
+      <OKLink id="sv3#inn2#oln3" name="OKFlow3" to="sv3#mfu1" gr:bendpoints="70,64,50,-81">
+        <LinkParameter id="sv3#inn2#oln3#par35" name="Input Value_KeyCondition2 [oid]" source="inputValue" target="sv3#mfu1#su5#kcond2.ent1#att1"/>
+      </OKLink>
+      <KOLink id="sv3#inn2#kln1" name="KOFlow1" to="sv3#cru2" gr:bendpoints="-99,77,131,-63">
+        <LinkParameter id="sv3#inn2#kln1#par53" name="False_habilitado" sourceValue="False" target="sv3#cru2.ent1#att16"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <LogoutUnit gr:x="315" gr:y="20" id="sv3#lou2" name="Cerrar Sesi&#243;n" siteView="sv2" landmark="true"/>
+    <CreateUnit gr:x="650" gr:y="410" id="sv3#cru3" name="Crear Producto" entity="ent2">
+      <OKLink id="sv3#cru3#oln6" name="OKFlow6" to="sv3#page8" automaticCoupling="true" gr:bendpoints="64,-55,168,171"/>
+    </CreateUnit>
+    <SelectorUnit gr:x="1430" gr:y="320" id="sv3#seu8" name="Producto" entity="ent2">
+      <Selector id="sv3#seu8#su10" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#seu8#su10#kcond3" name="KeyCondition3" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#seu8#oln7" name="OKFlow7" to="sv3#page10#enu6">
+        <LinkParameter id="sv3#seu8#oln7#par87" name="descripcion_descripcion" source="ent2#att13Array" target="sv3#page10#enu6#fld22_slot"/>
+        <LinkParameter id="sv3#seu8#oln7#par88" name="nombre_nombre" source="ent2#att12Array" target="sv3#page10#enu6#fld21_slot"/>
+        <LinkParameter id="sv3#seu8#oln7#par89" name="oid_oid" source="ent2#att11Array" target="sv3#page10#enu6#fld25_slot"/>
+        <LinkParameter id="sv3#seu8#oln7#par90" name="precio_precio" source="ent2#att14Array" target="sv3#page10#enu6#fld23_slot"/>
+        <LinkParameter id="sv3#seu8#oln7#par91" name="ProductoToRestaurante.oid_Restaurante - Preselection" source="rel4#role8_ent1#att1Array" target="sv3#page10#enu6#sfld5_presel"/>
+        <LinkParameter id="sv3#seu8#oln7#par92" name="stock_stock" source="ent2#att27Array" target="sv3#page10#enu6#fld24_slot"/>
+        <LinkParameter id="sv3#seu8#oln7#par93" name="ProductoToTipo_Producto.oid_Tipo Producto - Preselection" source="rel10#role19_ent7#att6Array" target="sv3#page10#enu6#sfld6_presel"/>
+      </OKLink>
+    </SelectorUnit>
+    <ModifyUnit gr:x="885" gr:y="400" id="sv3#mfu2" name="Update Producto" entity="ent2">
+      <Selector id="sv3#mfu2#su12" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#mfu2#su12#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#mfu2#oln8" name="OKFlow8" to="sv3#page10" automaticCoupling="true" gr:bendpoints="110,40,-175,185"/>
+    </ModifyUnit>
+    <SelectorUnit id="sv3#seu15" name="Productos" gr:x="1135" gr:y="660" entity="ent2">
+      <Selector id="sv3#seu15#su16" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#seu15#su16#rcond11" name="Restaurante" predicate="in" implied="false" role="rel4#role7"/>
+      </Selector>
+      <OKLink id="sv3#seu15#oln9" name="OKFlow9" to="sv3#page9#enu8" gr:bendpoints="-123,31,92,-64">
+        <LinkParameter id="sv3#seu15#oln9#par97" name="nombre_Productos [label]" source="ent2#att12Array" target="sv3#page9#enu8#msfld2_label"/>
+        <LinkParameter id="sv3#seu15#oln9#par98" name="oid_Productos [output]" source="ent2#att11Array" target="sv3#page9#enu8#msfld2_output"/>
+        <LinkParameter id="sv3#seu15#oln9#par143" name="nombre_PASSING_Restaurante" sourceLinkParameter="sv3#page9#inu5#ln20#par141" target="sv3#page9#enu8#fld27_slot"/>
+        <LinkParameter id="sv3#seu15#oln9#par144" name="oid_PASSING" sourceLinkParameter="sv3#page9#inu5#ln20#par142" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <CreateUnit gr:x="1135" gr:y="780" id="sv3#cru4" name="Crear Men&#250;" entity="ent4">
+      <OKLink id="sv3#cru4#oln10" name="OKFlow10" to="sv3#page9" automaticCoupling="true"/>
+    </CreateUnit>
+    <SelectorUnit gr:x="430" gr:y="700" id="sv3#seu14" name="Productos" entity="ent2">
+      <Selector id="sv3#seu14#su22" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#seu14#su22#rcond16" name="Restaurante" predicate="in" implied="false" role="rel4#role7"/>
+      </Selector>
+      <OKLink id="sv3#seu14#oln14" name="OKFlow12" to="sv3#page11#inu7">
+        <LinkParameter id="sv3#seu14#oln14#par148" name="oid_PASSING_Restaurante [oid]" sourceLinkParameter="sv3#page11#inu6#ln47#par147" target="sv3#page11#inu7#su14#rcond9.ent1#att1"/>
+        <LinkParameter id="sv3#seu14#oln14#par150" name="nombre_PASSING" sourceLinkParameter="sv3#page11#inu6#ln47#par149" passing="true"/>
+        <LinkParameter id="sv3#seu14#oln14#par60" name="nombre_producto_PASSING" source="ent2#att12Array" passing="true"/>
+        <LinkParameter id="sv3#seu14#oln14#par61" name="oid_PASSING" source="ent2#att11Array" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="150" gr:y="990" id="sv3#seu16" name="ProductosMen&#250;" entity="ent2">
+      <Selector id="sv3#seu16#su23" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#seu16#su23#rcond17" name="Men&#250;" predicate="in" implied="false" role="rel5#role10"/>
+      </Selector>
+      <OKLink id="sv3#seu16#oln13" name="OKFlow13" to="sv3#page11#enu7">
+        <LinkParameter id="sv3#seu16#oln13#par140" name="oid_Productos - Preselection" source="ent2#att11Array" target="sv3#page11#enu7#msfld1_presel"/>
+        <LinkParameter id="sv3#seu16#oln13#par159" name="descripcion_PASSING_descripcion" sourceLinkParameter="sv3#page11#inu7#ln51#par153" target="sv3#page11#enu7#fld32_slot"/>
+        <LinkParameter id="sv3#seu16#oln13#par160" name="Descuento_PASSING_Descuento" sourceLinkParameter="sv3#page11#inu7#ln51#par154" target="sv3#page11#enu7#fld34_slot"/>
+        <LinkParameter id="sv3#seu16#oln13#par161" name="nombre_PASSING_nombre" sourceLinkParameter="sv3#page11#inu7#ln51#par155" target="sv3#page11#enu7#fld28_slot"/>
+        <LinkParameter id="sv3#seu16#oln13#par163" name="precio_PASSING_precio" sourceLinkParameter="sv3#page11#inu7#ln51#par158" target="sv3#page11#enu7#fld33_slot"/>
+        <LinkParameter id="sv3#seu16#oln13#par164" name="nombre_PASSING_Restaurante" sourceLinkParameter="sv3#page11#inu7#ln51#par156" target="sv3#page11#enu7#fld35_slot"/>
+        <LinkParameter id="sv3#seu16#oln13#par66" name="nombre_producto_PASSING_Productos [label]" sourceLinkParameter="sv3#page11#inu7#ln51#par64" target="sv3#page11#enu7#msfld1_label"/>
+        <LinkParameter id="sv3#seu16#oln13#par67" name="oid_PASSING_Productos [output]" sourceLinkParameter="sv3#page11#inu7#ln51#par65" target="sv3#page11#enu7#msfld1_output"/>
+      </OKLink>
+    </SelectorUnit>
+    <ModifyUnit gr:x="495" gr:y="830" id="sv3#mfu3" name="Actualizar Men&#250;" entity="ent4">
+      <Selector id="sv3#mfu3#su15" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#mfu3#su15#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#mfu3#oln11" name="OKFlow11" to="sv3#rcnu2" automaticCoupling="true"/>
+    </ModifyUnit>
+    <ReconnectUnit gr:x="505" gr:y="965" id="sv3#rcnu2" name="ProductosMen&#250;" relationship="rel5#role10">
+      <SourceSelector id="sv3#rcnu2#su19" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#rcnu2#su19#kcond8" name="KeyCondition8" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv3#rcnu2#su20" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#rcnu2#su20#kcond9" name="KeyCondition9" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv3#rcnu2#oln12" name="OKFlow12" to="sv3#page11" automaticCoupling="true" gr:bendpoints="-164,12,191,217"/>
+    </ReconnectUnit>
+    <DeleteUnit gr:x="910" gr:y="280" id="sv3#dlu1" name="Borrar Producto" entity="ent2">
+      <Selector id="sv3#dlu1#su17" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#dlu1#su17#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#dlu1#oln15" name="OKFlow15" to="sv3#page10" automaticCoupling="true"/>
+    </DeleteUnit>
+    <DeleteUnit gr:x="-15" gr:y="505" id="sv3#dlu2" name="Borrar Restaurante" entity="ent1">
+      <Selector id="sv3#dlu2#su18" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#dlu2#su18#kcond7" name="KeyCondition7" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#dlu2#oln16" name="OKFlow16" to="sv3#page7" automaticCoupling="true"/>
+      <CascadeDeleteRole id="sv3#dlu2#cdr1" name="Productos" role="rel4#role7"/>
+    </DeleteUnit>
+  </OperationUnits>
+</SiteView>

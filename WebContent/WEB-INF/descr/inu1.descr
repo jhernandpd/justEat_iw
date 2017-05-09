@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.content.rtx.db.IndexUnitService" name="Filtro tipo comidas">
+  <UseFirstRowAsDefaultCurrent>false</UseFirstRowAsDefaultCurrent>
+  <MaxResults/>
+  <Query entity="ent3">
+    <Output id="att17" name="oid" index="0"/>
+    <Output id="att18" name="nombre" index="1"/>
+    <HQL>select a_tipoComida.oid, a_tipoComida.nombre from TipoComida a_tipoComida order by a_tipoComida.nombre asc</HQL>
+  </Query>
+</Descriptor>
+ 

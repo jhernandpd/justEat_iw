@@ -1,0 +1,72 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="330" gr:y="110" id="sv4#page5" name="Restaurantes">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv4#page5#inu1" name="Filtro tipo comidas" entity="ent3" displayAttributes="ent3#att18" linkOrder="sv4#page5#inu1#ln2" customDescriptor="true">
+      <Link id="sv4#page5#inu1#ln2" name="Filtrar" to="sv4#page5#pwu1" type="normal" validate="true">
+        <LinkParameter id="sv4#page5#inu1#ln2#par4" name="Ciudad_PASSING_Ciudad" sourceLinkParameter="sv4#page6#enu3#ln5#par3" target="sv4#page5#pwu1#su1#acond2"/>
+        <LinkParameter id="sv4#page5#inu1#ln2#par10" name="True_habilitado" sourceValue="True" target="sv4#page5#pwu1#su1#acond1"/>
+        <LinkParameter id="sv4#page5#inu1#ln2#par11" name="oid_Comida [oid]" source="data[].ent3#att17" target="sv4#page5#pwu1#su1#rcond2.ent3#att17"/>
+      </Link>
+      <SortAttribute attribute="ent3#att18" order="ascending"/>
+    </IndexUnit>
+    <PowerIndexUnit id="sv4#page5#pwu1" entity="ent1" displayAttributes="ent1#att2" sortable="false" checkable="false" useCountQuery="false" gr:x="225" gr:y="0" name="Restaurantes">
+      <Selector id="sv4#page5#pwu1#su1" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv4#page5#pwu1#su1#rcond2" role="rel9#role17.rel9#role18.rel9#role17" predicate="in" implied="false" name="Comida"/>
+        <AttributesCondition id="sv4#page5#pwu1#su1#acond1" name="habilitado" predicate="eq" booleanOperator="and" implied="false" attributes="ent1#att16" ignoreCase="false"/>
+        <AttributesCondition id="sv4#page5#pwu1#su1#acond2" name="Ciudad" predicate="eq" booleanOperator="and" implied="false" attributes="ent1#att7"/>
+      </Selector>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page5#inu1">
+          <layout:Attribute attribute="ent3#att18"/>
+          <layout:Link link="sv4#page5#inu1#ln2"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page5#pwu1">
+          <layout:Attribute attribute="ent1#att2"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

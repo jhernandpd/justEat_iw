@@ -1,0 +1,31 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="60" gr:y="115" id="sv4#page6" name="Inicio" landmark="true">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv4#page6#enu3" name="Buscar por Ciudad" linkOrder="sv4#page6#enu3#ln5">
+      <Field id="sv4#page6#enu3#fld3" name="Ciudad" type="string" modifiable="true" ajaxAutocompleteEnabled="false"/>
+      <Link id="sv4#page6#enu3#ln5" name="Buscar" to="sv4#page5#inu1" type="normal" validate="true">
+        <LinkParameter id="sv4#page6#enu3#ln5#par3" name="Ciudad_PASSING" source="sv4#page6#enu3#fld3" passing="true"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page6#enu3">
+          <layout:Field field="sv4#page6#enu3#fld3"/>
+          <layout:Link link="sv4#page6#enu3#ln5"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
